@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# React Router Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um pequeno desafio desenvolvido para praticar conceitos essenciais do **React Router**, aprendendo a criar rotas, navegar entre páginas e estruturar layouts em uma SPA.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sobre o Projeto
 
-## React Compiler
+Este projeto demonstra:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Uso básico do **react-router-dom**
+- Navegação entre páginas sem recarregamento
+- Componente de **Navbar** com links ativos
+- Layout fixo com **header** e **main**, enquanto o conteúdo troca conforme a rota
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Estrutura do Projeto
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+react-router-challenge/ <br/>
+├── public/ <br/>
+└── src/ <br/>
+├── components/ ← Componentes reutilizáveis (Navbar etc.) <br/>
+├── pages/ ← Páginas (Home, About, End) <br/>
+├── App.jsx <br/>
+└── main.jsx
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Funcionalidades
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Navegação entre páginas usando React Router
+- Links que mudam estilo quando estão ativos (`NavLink`)
+- Componentização simples e organizada
+- Estrutura boa para iniciantes entenderem o fluxo de rotas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tecnologias Utilizadas
+
+- **React**
+- **Vite**
+- **react-router-dom**
+
+---
+
+## Como Rodar o Projeto
+
+```bash
+# 1. Clonar o repositório
+git clone https://github.com/MikaelCM/react-router-challenge.git
+
+# 2. Entrar no diretório
+cd react-router-challenge
+
+# 3. Instalar dependências
+npm install
+# ou
+
+# 4. Rodar o servidor de desenvolvimento
+npm run dev
+# ou
+
+A aplicação abrirá (ou indicará o endereço), geralmente em:
+http://localhost:5173
+
+Melhorias Futuras
+Criar página de 404 – Not Found
+
+Criar um layout mais estilizado para o Navbar
+
+Adicionar rotas dinâmicas (ex: /user/:id)
+
+Criar rotas protegidas (authentication guard)
+
+Implementar temas ou design mais profissional
