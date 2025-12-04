@@ -8,7 +8,7 @@ const About = () => {
   const { counter } = useCounterContext();
 
   // 5 - Context mais complexo
-  const { color, dispatch } = useTitleColorContext();
+  const { color} = useTitleColorContext();
 
   return (
     <div>
