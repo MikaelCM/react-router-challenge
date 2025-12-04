@@ -1,7 +1,19 @@
+// import { useContext } from "react"
+// import { CounterContext } from "../context/CounterContext"
+import useCounterContext from "../hooks/useCounterContext";
+import { useTitleColorContext } from "../hooks/useTitleColorContext";
+
 const About = () => {
+  //const { counter } = useContext(CounterContext);
+  const { counter } = useCounterContext();
+
+  // 5 - Context mais complexo
+  const { color, dispatch } = useTitleColorContext();
+
   return (
     <div>
-        <h2>SOBRE</h2>
+        <h2 style={{color: color}}>SOBRE</h2>
+        <p>Valor do contador: {counter}</p>
     </div>
   )
 }
